@@ -1,4 +1,4 @@
 # ekg_tda
 This is an algorithm which detects EKG features using persistent homology and then measures the PR,QT,ST-interval, QRS-duration, P-wave duration, and T-wave duration based off of the
 upper and lower time axis bounds of the representative cycles of the detected features within the dataset. There are also flags which indicate atrial fibrillation, atrial flutter, and 
-first-degree AV block.
+first-degree AV block. Essentially, P, Q, S, and T waves are characterized using dimension one homological features with a persistence and center of mass of representative cycle within certain ranges depending on the specific waveform. For better understanding and intuition about what the topological invariants of the data are and how they're used to measure various intervals of interest and eventually characterize arrhythmias, see "ekg_feature_extraction_intro.docx".
