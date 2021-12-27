@@ -3,9 +3,13 @@ This code uses tools from persistent homology to identify optimal representative
 
 Here is a brief description of the code:
 ekg_sim.py is used to analyze simultated ECG signals
+
 ekg_real_data.py is used to analyze real ECG signals
-cycles.py contains functions 
-intervals.py contains functions
-processing.py contains functions
+
+cycles.py contains functions to compute the centroid of boundary points of optimal cycles, compute the onset and offset of the intervals of interest, and draw optimal 1-cycles identified as P,Q,S, and T-waves
+
+intervals.py contains functions to measure intervals of interest
+
+processing.py contains functions to process an ECG signal prior to computing its persistent homology
 
 ![cycle_example](https://user-images.githubusercontent.com/73852653/147366648-d563e3a3-68db-4663-a7d3-add220ce05e1.png)
