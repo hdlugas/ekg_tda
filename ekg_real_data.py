@@ -2,15 +2,15 @@
 import numpy as np
 import pandas as pd
 import os, random
-from homcloud.interface import optimal_volume
 import homcloud.interface as hc
 from numpy.random.mtrand import normal
+from matplotlib.backends.backend_pdf import PdfPages
 from scipy import signal
 from processing import *
 from cycles import *
 from intervals import *
 
-n_samples=50
+n_samples=2
 sf=500
 name_vec=[]
 
@@ -31,7 +31,7 @@ for i in range(0,n_samples):
     ekg[:,1]=normalize(ekg[:,1]) #first normalize signal to find R-wave peaks
     rpeaks=signal.find_peaks(ekg[:,1],height=0.5,distance=10)
     r_peak_xcs,r_peak_xc_idx=get_rpeak_xcs(rpeaks,ekg)
-    ekg=add_isoelectric_line(ekg,r_peak_xc_idx)
+    ekg=add_isoelectric_line(ekg)
     #ekg[:,1]=adjoin_noise(ekg[:,1],noise)
     #ekg[:,1]=normalize(ekg[:,1]) # now normalize data so that persistent thresholds can be set
     #rpeaks=signal.find_peaks(ekg[:,1],height=0.6,distance=10)
