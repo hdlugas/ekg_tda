@@ -3,7 +3,7 @@ This code uses tools from persistent homology to identify optimal representative
 
 Here is a brief description of the code:
 
-ekg_sim.py is used to analyze simultated ECG signals
+ekg_sim.py is used to analyze simulated ECG signals
 
 ekg_real_data.py is used to analyze real ECG signals
 
