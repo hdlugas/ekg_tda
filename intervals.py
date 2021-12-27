@@ -1,3 +1,5 @@
+#This script includes functions used to measure the PR-interval, QT-interval, ST-segment, QRS-duration, P-wave duration, and T-wave duration
+
 import numpy as np
 from processing import *
 from cycles import *
