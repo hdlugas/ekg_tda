@@ -105,14 +105,14 @@ def get_intervals_and_H1wave_idxs(ekg,r_peak_xcs,rr_int_avg,persist,births,xcs,y
     #1d array of time-coordinates of representative cycles, 1d array of amplitude-coordinates of representative cycles, and list of boundary points of representative cycles
     #output:12x1 array of means and standard deviations of interval measurements, 4 1d arrays with index locations of P,Q,S, and T-waves in the vector persist
 
-    persist_p_wave_lower = 0.002
+    persist_p_wave_lower = 0.001
     persist_p_wave_upper = 0.2
     persist_t_wave_lower = 0.01
     persist_t_wave_upper = 0.6
-    persist_q_wave_lower = 0.001
-    persist_q_wave_upper = 0.08
-    persist_s_wave_lower = 0.001
-    persist_s_wave_upper = 0.08
+    persist_q_wave_lower = 0.007
+    persist_q_wave_upper = 0.1
+    persist_s_wave_lower = 0.007
+    persist_s_wave_upper = 0.1
     p_wave_persist = []
     t_wave_persist = []
     q_wave_persist = []
@@ -121,23 +121,23 @@ def get_intervals_and_H1wave_idxs(ekg,r_peak_xcs,rr_int_avg,persist,births,xcs,y
     for i in range(0,len(persist)):
         for j in range(0,len(r_peak_xcs)):
             if (persist[i] > persist_p_wave_lower and persist[i] < persist_p_wave_upper and
-            xcs[i] < r_peak_xcs[j]-0.08*rr_int_avg and xcs[i] > r_peak_xcs[j]-0.35*rr_int_avg and
+            xcs[i] < r_peak_xcs[j]-0.06*rr_int_avg and xcs[i] > r_peak_xcs[j]-0.35*rr_int_avg and
             ycs[i] < 0.15 and ycs[i] > 0.0 and births[i] < 0.03):
                 p_wave_persist.append(persist[i])
 
             if (persist[i] > persist_t_wave_lower and persist[i] < persist_t_wave_upper and
-            xcs[i] > r_peak_xcs[j]+0.15*rr_int_avg and xcs[i] < r_peak_xcs[j]+0.6*rr_int_avg and
-            ycs[i] < 0.4 and ycs[i] > 0.0 and births[i] < 0.08):
+            xcs[i] > r_peak_xcs[j]+0.15*rr_int_avg and xcs[i] < r_peak_xcs[j]+0.5*rr_int_avg and
+            ycs[i] < 0.4 and ycs[i] > 0.0 and births[i] < 0.04):
                 t_wave_persist.append(persist[i])
 
             if (persist[i] > persist_q_wave_lower and persist[i] < persist_q_wave_upper and
             xcs[i] < r_peak_xcs[j] and xcs[i] > r_peak_xcs[j]-0.12*rr_int_avg and
-            ycs[i] < 0.0 and births[i] < 0.07):
+            ycs[i] < 0.0 and births[i] < 0.06):
                 q_wave_persist.append(persist[i])
 
             if (persist[i] > persist_s_wave_lower and persist[i] < persist_s_wave_upper and
             xcs[i] > r_peak_xcs[j] and xcs[i] < r_peak_xcs[j]+0.12*rr_int_avg and
-            ycs[i] < 0.0 and births[i] < 0.07):
+            ycs[i] < 0.0 and births[i] < 0.06):
                 s_wave_persist.append(persist[i])
 
     idx_p = []
