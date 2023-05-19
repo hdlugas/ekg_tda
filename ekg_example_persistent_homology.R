@@ -1,12 +1,12 @@
 library(TDA)
+
+#define the toy ekg signal as Gaussian P,T-waves and linear QRS-complex
 p_time<-cbind(1:100)
 t_time<-cbind(1:76)
 q_time<-cbind(1:20)
 s_time<-cbind(1:30)
 r_time<-cbind(1:20)
-#time<-cbind(time/250)
-pt<-cbind(time[1:100])
-tt<-cbind(time[400:500])
+
 p_width<-12  #width of gaussian p-wave at half-max
 t_width<-10
 p<-cbind(0.2*exp(-1*((p_time-50)^2)/(2*p_width*p_width)))
@@ -25,7 +25,7 @@ plot(ekgt)
 
 
 #add baseline
-ekg<-matrix(0,nrow(ekgt),1)
+ekg = matrix(0,nrow(ekgt),1)
 for(i in 1:nrow(ekgt)){
   if(i%%3==0){
     ekg[i]<-0
@@ -54,6 +54,7 @@ plot(diag[["diagram"]],main="Persistent Homology with r = 0.025")
 
 
 
+#toy example of dataset consisting of four points forming a square
 x<-c(0,0,1,1)
 y<-c(0,1,1,0)
 z<-cbind(x,y)
