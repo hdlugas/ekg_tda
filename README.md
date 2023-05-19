@@ -13,6 +13,8 @@ intervals.py contains functions to measure intervals of interest
 
 processing.py contains functions to process an ECG signal prior to computing its persistent homology
 
+ekg_example_persistent_homology.R generates teh figures shown in the document 'ekg_feature_extraction_intro.docx'
+
 
 Here is an image of a simulated ECG signal with area-optimal 1-cycles with certain properties depending on their birth filtration, persistence, and centroid identified as P,Q,S, and T-waves:
 ![cycle_example](https://user-images.githubusercontent.com/73852653/147366648-d563e3a3-68db-4663-a7d3-add220ce05e1.png)
