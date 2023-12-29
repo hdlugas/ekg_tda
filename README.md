@@ -1,4 +1,4 @@
-# ekg_tda
+# Electrocardiogram Interval Measurements using Persistent Homology
 This code uses tools from persistent homology to identify optimal representative 1-cycles as P,Q,S, and T-waves of an electrocardiogram (ECG) signal. These cycles are then used to measure the PR-interval, QT-interval, ST-segment, QRS-duration, P-wave duration, and T-wave duration based off of the upper and lower time axis bounds of these representative cycles. Briefly, P,Q,S, and T waves are characterized using dimension one homological features with a persistence and centroid of representative cycle within certain ranges depending on the specific waveform, i.e. a P,Q,S, or T-wave. For better understanding and intuition about what the topological invariants of the data are and how they're used to measure various intervals of interest, see "ekg_feature_extraction_intro.docx".
 
 Here is a brief description of the code:
