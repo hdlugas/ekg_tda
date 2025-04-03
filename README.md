@@ -18,3 +18,9 @@ ekg_example_persistent_homology.R generates teh figures shown in the document 'e
 
 Here is an image of a simulated ECG signal with area-optimal 1-cycles with certain properties depending on their birth filtration, persistence, and centroid identified as P,Q,S, and T-waves:
 ![cycle_example](https://user-images.githubusercontent.com/73852653/147366648-d563e3a3-68db-4663-a7d3-add220ce05e1.png)
+
+# Associated work
+This repository contains all scripts related to the preprint "Electrocardiogram feature extraction and interval measurements using optimal representative cycles from persistent homology".
+
+Dlugas, H. (2022). Electrocardiogram feature extraction and interval measurements using optimal
+representative cycles from persistent homology. bioRxiv. (doi.org/10.1101/2022.02.01.478609)[https://doi.org/10.1101/2022.02.01.478609].
